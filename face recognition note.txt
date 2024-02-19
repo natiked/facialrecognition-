@@ -1,0 +1,22 @@
+How does the face recognition work 
+
+The face recognition use the HOG(Histogram of oriented gradients) method which was invented in 2005
+
+It passes different steps in order to get the outcome 
+
+1st: It detects the face from the image by using the HOG method at the back end
+     The HOG method is a complex way of detecting a face first it makes the images in black and while then it looks at each  pixel in the 
+     image one at a time  then it looks at the darkness of the image in each pixel and uses arrows to show the direction that the image gets darker
+     and replaces the pixels with gradient(arrows). And picks the strongest gradient from a 16*16 pixel to make it better.
+
+2nd: It deals with the posing and projection of faces 
+     The second step of the face recognition module is dealing with the posing of the face and for this step it uses an algorithm caleed face landmark 
+     estimation made by Vahid Kazemi and Josphine Sullivan. It uses 68 specific points called landmarks. And uses the dlib library at the back end. And this algorithm
+     solves the problem of posing.
+
+3rd: Encoding files
+     It uses 128 measurnments to differentiate between different images that would me more reliable 
+
+4th: Finding the person's name from the encoding 
+    It looks at all the faces we've measured in the past, see which person has the closest measurnments to our face's measurnments. That's our match.
+    
